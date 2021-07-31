@@ -28,11 +28,13 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
+    let output = a * b ;
+    return[output ,`The product of ${a} and ${b} is ${output}.`];
 
 }
 
 // Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -49,14 +51,19 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-    let summation =a+b+c;
-    let multiplication =a*b*c;
-    return[summation, multiplication,`${a} and ${b} and ${c} sum to ${summation}.`,`The product of ${a} and ${b} and 5 is ${c}.`]
+    let summation=sum(a,b)[0];
+    summation=sum(summation,c)[0];
+console.log(summation)
+
+    let multiplication=multiply(a,b)[0];
+    multiplication=multiply(multiplication,c)[0];
+    console.log(multiplication)
+    return[summation , multiplication ,`${a} and ${b} and ${c} sum to ${summation}.` , `The product of ${a} and ${b} and ${c} is ${multiplication}.`];
 
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
